@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: jdbc
+logging:
+  level:
+     org.springframework.security: DEBUG
+
+---
+
+flyway:
+  table: _schema_history
+  baseline-on-migrate: true
+
+---
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=OAuth
+    username: oauth
+    password: oauth#1234
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    initialize: true
